@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+{% include 'folder/nav.html' %}
+<div class="container">
+    <div class="cima">
+           <div class="welcome">
+           <h4 class="welcome-t">Bem Vindo!</h4>
+           </div>
+           <div class="search-bar">
+            <input class="search-button" type="text" placeholder="Search">
+           </div>
+           <a href="/"><div class="welcome2">
+            <svg style="margin-top: 17px; margin-left: 16px" stroke="currentColor" fill="white" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+           </svg>
+            <h4 class="welcome-t2">Salvos</h4>
+            </div></a>
+    </div>
+    <div class="slider">
+        <ul>
+            {% for manga in mangas %}
+            {% if forloop.counter < 3 %}
+            <li>
+                <input type="radio" name="slide" id="slide1" checked>
+                {% if manga.banner %}
+                <img src="{{ manga.banner.url }}" alt="">
+                {% endif %}
+            </li>
+            {% endif %}
+            {% endfor %}
+
+        </ul>
+  
+    </div>
+    <div class="meudeus">
+    <div class="latest-episodes">
+        <div class="latest">
+            <h1 class="latest-episodes-lan">Ultimos Capitulos</h1>
+        </div>
+        {% for manga in mangas %}
+        <a href="{% url 'manga-detail' manga.pk %}" class="direct"><div class="episodios">
+            <div class="back"><p class="ep">ep. 23</p></div>
+            <div class="image">
+            <img src="{{ manga.capa.url }}" class="img-post" alt="">
+            </div>
+            <div class="title"> 
+                <span class="title-ep">{{ manga.nome }}</span>
+            </div>
+        </div></a>
+        {% endfor %}
+    </div>
+</div>
+        
+    
+
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,498 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+
+
+.side-bar{
+    background: white;
+    position: fixed;
+    width: 260px;
+    margin-left: 21px;
+    margin-top: 60px;
+    height: 482px;
+    border-radius: 20px; 
+    
+}
+
+.selections{
+    margin-left: 20px;
+    margin-top: 60px;
+}
+
+.selections2{
+    margin-left: 28px;
+    margin-top: 290px;
+}
+
+.icon-home{
+    height: 30px;
+}
+
+.home-icon{
+    height: 35px;
+    width: 170px;
+    transition: all 0.1s;
+    position: absolute;
+}
+
+.icon-names{
+    position: absolute;
+    color: black;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 7px;
+    font-weight: normal;
+}
+.icon-names2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 15px;
+    font-weight: normal;
+}
+
+.onhigh-icon{
+    margin-top: 46px;
+    height: 35px;
+    width: 170px;
+    position: absolute;
+    transition: all 0.1s;
+
+}
+
+.gener-icon{
+    position: absolute;
+    margin-top: 89px;
+    height: 35px;
+    transition: all 0.1s;
+    width: 170px;
+}
+
+
+.home-icon:hover{
+    background-color: #818cf8;
+    border-radius: 6px;
+    margin-top: -2px;
+    
+}
+
+.gener-icon:hover{
+    background: #e0e7ff ;
+    border-radius: 6px;
+    margin-top: 84px;
+}
+
+.onhigh-icon:hover{
+    background: #e0e7ff;
+    border-radius: 6px;
+    margin-top: 40px;
+}
+
+.finally{
+    position: absolute;
+    width: 180px;
+    margin-top: 180px;
+    height: 200px;
+    margin-left: 30px;
+}
+
+.name-finally{
+    font-weight: normal;
+    font-size: 14.5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: -50px;
+    position: absolute;
+    margin-left: 0px;
+    color: #777;
+}
+
+.top-image{
+    width: 30px;
+    height: 47px;
+    border-radius: 6px;
+}
+
+.home-icon0{
+    border-radius: 6px;
+    margin-top: -10px;
+    position: absolute;
+    background-color: #36096d;
+    background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+
+    width: 180px;
+    height: 47px;
+    transition: all 0.2s;
+}
+.onhigh-icon1{
+    border-radius: 6px;
+    transition: all 0.2s;
+    background-color: #20bf55;
+    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);    
+
+    width: 180px;
+    position: absolute;
+    height: 47px;
+    margin-top: 48px;
+}
+.gener-icon2{
+    border-radius: 6px;
+    position: absolute;
+    background-color: #20bf55;
+    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);    
+    width: 180px;
+    height: 47px;
+    margin-top: 107px;
+    transition: all 0.2s;
+    margin-top: 107px;
+}
+
+.home-icon0:hover{
+    margin-top: -15px;
+}
+.onhigh-icon1:hover{
+    margin-top: 44px;
+}
+.gener-icon2:hover{
+    margin-top: 102px;
+}
+
+.cima{
+    width: 1000px;
+    height: 80px;
+    position: absolute;
+    margin-left: 340px;
+    margin-top: 63px;
+    display: flex;
+}
+
+.welcome{
+    width: 120px;
+    height: 50px;
+    background-color: #20bf55;
+    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+    margin-top: 20px;
+    margin-left: 10px;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    border-top-right-radius: 19px;
+    box-shadow: 0 0 1em #20bf55;
+
+}
+
+.welcome2{
+    width: 120px;
+    height: 50px;
+    background-color: #36096d;
+    background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+    margin-top: 20px;
+    margin-left: 200px;
+    border-radius: 30px;
+    box-shadow: 0 0 1em #37d5d6;
+}
+
+.welcome-t{
+    position: absolute;
+    margin-top: 16px;
+    margin-left: 16px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.welcome-t2{
+    position: absolute;
+    margin-top: -23px;
+    margin-left: 40px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.search-bar{
+    margin-top: 0px;
+    margin-left: 150px;
+}
+
+.search-button{
+    background: #D1D5DB;
+    border: 0px;
+    margin-top: 25px;
+    width: 340px;
+    height: 40px;
+    border-radius: 30px;
+    text-align: inherit;
+    padding: 22px;
+}
+input[type=text]:focus{
+    border: 1px solid black;
+}
+input[type=text]{
+    border: 0px;
+    outline: none;
+}
+
+.slider{
+    display: block;
+    width: 920px;
+    position: absolute;
+    margin-left: 346px;
+    margin-top: 150px;
+    border-radius: 30px;
+}
+
+.slider img{
+    margin-top: 10px;
+    border-radius: 45px;
+    width: 936px;
+    transition: all 1s;
+    height: 300px;
+}
+
+.slider li{
+    list-style: none;
+    position: absolute;
+}
+
+.slider input{
+    display: none;
+}
+
+.opacity{
+    width: 336px;
+    opacity: 0;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background: white;
+    position: absolute;
+    display: block;
+    height: 114px;
+    margin-top: 147px;
+    margin-left: 600px;
+}
+
+
+
+
+
+
+.meudeus{
+    max-width: 920px;
+    width: 100%;
+    height: 1500px;
+    display: block;
+    background: white;
+    margin-left: 360px;
+    margin-top: 540px;
+    border-radius: 20px;
+    position: absolute;
+}
+
+.latest-episodes{
+    
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.latest-episodes-lan{
+    position: absolute;
+    background: white;
+    margin-top: 45px;
+    font-size: 34px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 40px;
+}
+
+.episodios{
+    width: 250px;
+    border-radius: 42px;
+    height: 320px;
+    transition: all 0.2s;
+    margin-top: 130px;
+    margin-left: 40px;
+    display: flex;
+}
+
+.back{
+    width: 80px;
+    height: 30px;
+    position: absolute;
+    margin-top: 17px;
+    margin-left: 18px;
+    background: #5d61ff;
+    border-radius: 20px;
+    text-align: center;
+}
+.ep{
+    margin-top: 7px;
+    margin-left: 16px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+}
+
+.img-post{
+    width: 230px;
+    height: 320px;
+    border-radius: 31px;
+    transition: all 0.2s;
+}
+
+.title{
+    position: absolute;
+    margin-top: 225px;
+    background: black;
+    width: 230px;
+    height: 95px;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+    opacity: 0.6;
+}
+
+.title-ep{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 20px;
+    margin-left: 47 px;
+    position: absolute;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+
+
+.episodios:hover{
+    margin-top: 120px;
+}
+
+.top-header{
+    height: 320px;
+    width: 930px;
+    margin-left: 350px;
+    margin-top: 180px;
+    position: absolute;
+}
+
+.img-banner{
+    width: 930px;
+    height: 200px;
+    border-radius: 30px;
+}
+
+.img-capa{
+    width: 160px;
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 40px;
+    border-radius: 14px;
+    height: 230px;
+}
+
+.manga-info{
+    width: 930px;
+    height: 270px;
+    background: #6366f1;
+    position: absolute;
+    margin-top: 533px;
+    margin-left: 350px;
+    border-radius: 20px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.name-info{
+    color: white;
+    margin-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 20px;
+}
+
+.capa-info{
+    width: 130px;
+    margin-left: 20px;
+    margin-top: 20px;
+    height: 180px;
+    border-radius: 10px;
+}
+
+.manga-nome{
+    margin-left: 180px;
+    margin-top: -185px;
+    font-size: 21px;
+}
+
+
+.manga-create{
+    position: absolute;
+    margin-left: 180px;
+    margin-top: 20px;
+}
+
+.manga-caps{
+    position: absolute;
+    margin-left: 180px;
+    margin-top: 50px;
+}
+
+
+.meudeus2{
+    max-width: 930px;
+    width: 100%;
+    height: 1500px;
+    display: block;
+    background: white;
+    margin-left: 360px;
+    margin-top: 840px;
+    border-radius: 20px;
+    position: absolute;
+}
+
+.capitulos{
+    background: #e0e7ff;
+    color: #222;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+    position: absolute;
+    height: 60px;
+    padding: 22px;
+    width: 600px;
+    border-radius: 10px;
+}
+
+.episodios2{
+    width: 650px;
+    border-radius: 42px;
+    height: 0px;
+    transition: all 0.2s;
+    margin-top: 100px;
+    margin-left: 40px;
+}
+
+.btn-manga{
+    background: red;
+    height: 35px;
+    border-radius: 8px;
+    border: 0px solid white;
+    width: 90px;
+    background-color: #36096d;
+    background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+    box-shadow: 0 0 1em#36096d;
+}
+
+
+.cadastrar-cap-a{
+    position: absolute;
+    margin-left: 760px;
+    margin-top: 55px;
+    color: black;
+    text-decoration: none;
+    
+    
+}

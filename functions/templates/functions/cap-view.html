@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+{% include 'folder/nav.html' %}
+<div class="container">
+    <div class="cima">
+           <div class="welcome">
+           <h4 class="welcome-t">Bem Vindo!</h4>
+           </div>
+           <div class="search-bar">
+            <input class="search-button" type="text" placeholder="Search">
+           </div>
+           <a href="/"><div class="welcome2">
+            <svg style="margin-top: 17px; margin-left: 16px" stroke="currentColor" fill="white" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+           </svg>
+            <h4 class="welcome-t2">Salvos</h4>
+            </div></a>
+    </div>
+    
+    <div class="top-header">
+        <img class="img-capa" src="{{ manga.capa.url }}" alt="">
+        {% if manga.banner %}
+        <img class="img-banner" src="{{ manga.banner.url }}" alt="">
+        {% else %}
+        <img class="img-banner" src="{% static 'img/miguel.png' %}" alt="">
+        {% endif %}
+    </div>
+
+    <div class="meudeus2">
+        <a class="seta" href="{% url 'cap-view' manga.pk proximo %}">Proximo</a>
+        <a class="seta" style="margin-left: 700px;" href="{% url 'cap-view' manga.pk anterior %}">Anterior</a>
+        {% for image in caps %}
+         <img src="{{ image.image.url }}" alt="">
+        {% endfor %}
+    </div>
+<style>
+    .seta{
+        position: absolute;
+        margin-left: 800px;
+        color: black;
+        text-decoration: none;
+        margin-top: 20px;
+
+    }
+</style>
+</div>
+        
+    
+
+{% endblock %}
+
+
