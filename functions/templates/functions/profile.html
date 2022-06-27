@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+{% include 'folder/nav.html' %}
+<div class="container">
+    <div class="manga-info" style="margin-top: 50px; height: 300px">
+        <h2 class="name-info">{{ profile.user }}</h2>
+        {% if profile.picture %}
+        <img class="capa-info" style="height: 200px" src="{{ profile.picture.url }}" alt="">
+        {% else %}
+        <img class="capa-info" style="height: 200px" src="{% static 'img/itadori.jpg' %}" alt="">
+        {% endif %}
+        <h2 class="manga-nome">{{ manga.nome }}</h2>
+        <br>
+        <br>
+        <span class="manga-caps">{{ manga.descricao }}</span>
+    </div>
+    <br><br><br>
+    <div class="meudeus" style="margin-top: 400px;">
+        <div class="latest-episodes">
+            <div class="latest">
+                <h1 class="latest-episodes-lan">Mangas Favoritos</h1>
+            </div>
+            {% for manga in profile.salvos.all %}
+            <div class="episodios">
+                <div class="back">
+                    <p class="ep">{{ manga.teste.count }} | Caps</p>
+                </div>
+
+                <div class="image">
+                    <a href="{% url 'manga-detail' manga.pk %}"><img src="{{ manga.capa.url }}" class="img-post"
+                            alt=""></a>
+                </div>
+                <div class="title">
+                    <span class="title-ep">{{ manga.nome }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+
+
+{% endblock %}

@@ -5,59 +5,229 @@
 
 {% block content %}
 {% include 'folder/nav.html' %}
-<div class="container">
+<div class="container" style="margin-left: 0px;">
+    <style>
+        .result-card {
+            width: 340px;
+            box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.25);
+            transition: .5s;
+            height: 400px;
+            border-radius: 7px;
+            padding: 15px 15px;
+            margin-left: 280px;
+            margin-top: 80px;
+            position: absolute;
+            background: white;
+
+        }
+
+        .not-visible {
+            display: none;
+        }
+
+        .link {
+            text-decoration: none;
+            color: black;
+        }
+
+        .webseries {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+    </style>
     <div class="cima">
-           <div class="welcome">
-           <h4 class="welcome-t">Bem Vindo!</h4>
-           </div>
-           <div class="search-bar">
-            <input class="search-button" type="text" placeholder="Search">
-           </div>
-           <a href="/"><div class="welcome2">
-            <svg style="margin-top: 17px; margin-left: 16px" stroke="currentColor" fill="white" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-           </svg>
-            <h4 class="welcome-t2">Salvos</h4>
-            </div></a>
+        <div class="welcome">
+            <h4 style="margin-left: 8px;" class="welcome-t">Bem Vindo!</h4>
+        </div>
+        <form action="" method="POST" id="search-form">
+            {% csrf_token %}
+            <div class="search-bar">
+                <input id="search-input" class="search-button" type="text" placeholder="Search">
+            </div>
+        </form>
+        <div id="result-box" class="result-card not-visible">
+
+        </div>
+        <a class="tadoido" href="{% url 'profile-view' request.user.profile.pk %}">
+            <div class="welcome2">
+                <svg style="margin-top: 17px; margin-left: 16px" stroke="currentColor" fill="white" stroke-width="2"
+                    viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <h4 class="welcome-t2">Salvos</h4>
+            </div>
+        </a>
     </div>
-    <div class="slider">
+    <br><br><br>
+    <div class="slider" id="slider-fdp">
         <ul>
             {% for manga in mangas %}
-            {% if forloop.counter < 3 %}
             <li>
                 <input type="radio" name="slide" id="slide1" checked>
                 {% if manga.banner %}
                 <img src="{{ manga.banner.url }}" alt="">
                 {% endif %}
             </li>
-            {% endif %}
             {% endfor %}
 
         </ul>
-  
+
     </div>
     <div class="meudeus">
-    <div class="latest-episodes">
-        <div class="latest">
-            <h1 class="latest-episodes-lan">Ultimos Capitulos</h1>
+        <div class="latest-episodes">
+            <div class="latest">
+                <h1 class="latest-episodes-lan">Recomendados</h1>
+            </div>
+            {% for manga in mangas %}
+            <div class="episodios">
+                <div class="back">
+                    <p class="ep">{{ manga.teste.count }} | Caps</p>
+                </div>
+                <div class="back2">
+                    {% if request.user.is_authenticated %}
+                    <form action="{% url 'manga-save' manga.pk %}" method="POST" id="{{ manga.id }}" class="save-form">
+                        {% csrf_token %}
+                        <button type="submit" style="position: absolute; cursor: pointer"
+                            class="save-btn{{ manga.id }}">
+                            {% if manga in salvos %}
+                            <img class="img-save-icon" id="img-icon-save{{ manga.id }}"
+                                src="{% static 'img/new-save-icon.png' %}" alt="">
+                            {% else %}
+                            <img class="img-save-icon" id="img-icon-save{{ manga.id }}"
+                                src="{% static 'img/save-icon5.png' %}" alt="">
+                            {% endif %}
+                        </button>
+                    </form>
+                    {% endif %}
+                </div>
+                <div class="image">
+                    <a href="{% url 'manga-detail' manga.pk %}"><img src="{{ manga.capa.url }}" class="img-post"
+                            alt=""></a>
+                </div>
+                <div class="title">
+                    <span class="title-ep">{{ manga.nome }}</span>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-        {% for manga in mangas %}
-        <a href="{% url 'manga-detail' manga.pk %}" class="direct"><div class="episodios">
-            <div class="back"><p class="ep">ep. 23</p></div>
-            <div class="image">
-            <img src="{{ manga.capa.url }}" class="img-post" alt="">
-            </div>
-            <div class="title"> 
-                <span class="title-ep">{{ manga.nome }}</span>
-            </div>
-        </div></a>
-        {% endfor %}
     </div>
-</div>
-        
-    
 
+
+    {% block footer %}
+    {% include 'folder/footer.html' %}
+    {% endblock footer %}
+
+
+    <script>
+
+        const sendSearchData = (series) => {
+
+            $.ajax({
+                type: 'POST',
+                url: '{% url "search" %}',
+                data: {
+                    'csrfmiddlewaretoken': csrf_token,
+                    'series': series
+                },
+                success: function (response) {
+                    const data = response.data
+                    if (Array.isArray(data)) {
+                        result_box.innerHTML = "";
+                        data.forEach(series => {
+                            result_box.innerHTML += `
+                            <a href="/manga/${series.pk}" class="link">
+                                <div class="row mt-2 mb-2">
+                                    <div class='col-2'>
+                                        <img src="${series.image}" class="webseries">
+                                    </div>
+                                    <div class="col-10">
+                                    <h5 style="margin-left: 60px; margin-top: -40px; position: absolute">${series.manga_nome}</h5>
+                                    </div>
+                                </div> 
+                            </a>`
+                        });
+                    } else {
+                        if (search_input.value.length > 0) {
+                            result_box.innerHTML = `<b>${data}</b>`
+                        } else {
+                            result_box.classList.add('not-visible')
+                        }
+                    }
+                },
+                error: function (response) {
+                    console.log('error', response)
+                }
+            })
+
+        }
+
+        const search_form = document.getElementById('search-form')
+
+        const search_input = document.getElementById('search-input')
+
+        const result_box = document.getElementById('result-box')
+
+        const slider = document.getElementById('slider-fdp')
+
+        const csrf_token = document.getElementsByName('csrfmiddlewaretoken')[0].value
+
+        search_input.addEventListener('keyup', e => {
+            console.log(e.target.value);
+
+            if (result_box.classList.contains('not-visible')) {
+                result_box.classList.remove('not-visible')
+                slider.classList.add('not-visible')
+            }
+
+            if (e.target.value === '') {
+                result_box.classList.add('not-visible')
+                slider.classList.remove('not-visible')
+            }
+
+            sendSearchData(e.target.value);
+        })
+
+
+
+        $(document).ready(function () {
+            $('.save-form').submit(function (e) {
+                e.preventDefault()
+                const manga_id = $(this).attr('id')
+
+                const url = $(this).attr('action')
+
+                const img = $(`#img-icon-save${manga_id}`).attr("src")
+
+                const btnText = $(`.save-btn${manga_id}`).text()
+                const btnTrim = $.trim(btnText)
+                console.log(btnTrim)
+
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: {
+                        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+                        'manga_id': manga_id,
+                    },
+                    success: function (response) {
+                        if (img === "/stati/img/new-save-icon.png") {
+                            const img = $(`#img-icon-save${manga_id}`).attr('src', '/stati/img/save-icon5.png')
+                        } else {
+                            const img = $(`#img-icon-save${manga_id}`).attr('src', '/stati/img/new-save-icon.png')
+                        }
+                    },
+                    error: function (response) {
+                        console.log('Error', response)
+                    }
+                })
+
+            })
+        })
+    </script>
 </div>
 {% endblock %}
-
-

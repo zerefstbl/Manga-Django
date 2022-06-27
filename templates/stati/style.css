@@ -8,13 +8,14 @@
 
 
 .side-bar{
-    background: white;
+    background: #141414;
     position: fixed;
     width: 260px;
     margin-left: 21px;
-    margin-top: 60px;
-    height: 482px;
-    border-radius: 20px; 
+    margin-top: 50px;
+    height: 652px;
+    border-radius: 10px;
+    border-right: 1px solid #C0C0C0; 
     
 }
 
@@ -25,7 +26,7 @@
 
 .selections2{
     margin-left: 28px;
-    margin-top: 290px;
+    margin-top: 220px;
 }
 
 .icon-home{
@@ -41,7 +42,7 @@
 
 .icon-names{
     position: absolute;
-    color: black;
+    color: white;
     text-decoration: none;
     margin-top: 10px;
     margin-left: 7px;
@@ -76,20 +77,29 @@
 
 
 .home-icon:hover{
-    background-color: #818cf8;
+    background: #8E0E00;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
     border-radius: 6px;
     margin-top: -2px;
     
 }
 
 .gener-icon:hover{
-    background: #e0e7ff ;
+    background: #780206;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
     border-radius: 6px;
     margin-top: 84px;
 }
 
 .onhigh-icon:hover{
-    background: #e0e7ff;
+    background: #780206;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
     border-radius: 6px;
     margin-top: 40px;
 }
@@ -114,7 +124,7 @@
 
 .top-image{
     width: 30px;
-    height: 47px;
+    height: 53px;
     border-radius: 6px;
 }
 
@@ -122,11 +132,11 @@
     border-radius: 6px;
     margin-top: -10px;
     position: absolute;
-    background-color: #36096d;
-    background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
 
-    width: 180px;
-    height: 47px;
+    width: 200px;
+    height: 53px;
     transition: all 0.2s;
 }
 .onhigh-icon1{
@@ -174,37 +184,42 @@
 .welcome{
     width: 120px;
     height: 50px;
-    background-color: #20bf55;
-    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
     margin-top: 20px;
     margin-left: 10px;
     border-top-left-radius: 24px;
     border-bottom-left-radius: 24px;
     border-top-right-radius: 19px;
-    box-shadow: 0 0 1em #20bf55;
+    box-shadow: 0 0 1em #434343;
 
 }
 
 .welcome2{
     width: 120px;
     height: 50px;
-    background-color: #36096d;
-    background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+    background: #870000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #870000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #190A05, #434343); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
     margin-top: 20px;
     margin-left: 200px;
     border-radius: 30px;
-    box-shadow: 0 0 1em #37d5d6;
+    box-shadow: 0 0 1em #434343;
 }
 
 .welcome-t{
     position: absolute;
     margin-top: 16px;
-    margin-left: 16px;
+    margin-left: 8px;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     font-size: 17px;
 }
+
 
 .welcome-t2{
     position: absolute;
@@ -284,15 +299,19 @@ input[type=text]{
 
 
 .meudeus{
-    max-width: 920px;
+    max-width: 947px;
     width: 100%;
     height: 1500px;
     display: block;
     background: white;
-    margin-left: 360px;
+    margin-left: 340px;
     margin-top: 540px;
     border-radius: 20px;
     position: absolute;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #141414, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #141414, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
 }
 
 .latest-episodes{
@@ -303,7 +322,7 @@ input[type=text]{
 
 .latest-episodes-lan{
     position: absolute;
-    background: white;
+    color: white;
     margin-top: 45px;
     font-size: 34px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -311,31 +330,49 @@ input[type=text]{
 }
 
 .episodios{
-    width: 250px;
+    width: 230px;
     border-radius: 42px;
     height: 320px;
     transition: all 0.2s;
     margin-top: 130px;
     margin-left: 40px;
     display: flex;
+    background: #141414
 }
 
 .back{
-    width: 80px;
+    width: 100px;
     height: 30px;
     position: absolute;
-    margin-top: 17px;
-    margin-left: 18px;
-    background: #5d61ff;
+    margin-top: 12px;
+    margin-left: 120px;
+    background: #414141;
+    opacity: 0.7;
     border-radius: 20px;
     text-align: center;
 }
 .ep{
-    margin-top: 7px;
+    margin-top: 5px;
     margin-left: 16px;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     position: absolute;
+}
+
+.back2{
+    width: 0px;
+    height: 30px;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 120px;
+    background: #414141;
+    opacity: 1;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.container{
+    margin-left: 0px;
 }
 
 .img-post{
@@ -343,6 +380,14 @@ input[type=text]{
     height: 320px;
     border-radius: 31px;
     transition: all 0.2s;
+}
+
+.img-save-icon{
+    margin-left: 69px;
+    width: 25px;
+    height: 30px;
+    margin-top: 1px;
+    position: absolute;    
 }
 
 .title{
@@ -360,7 +405,7 @@ input[type=text]{
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-top: 20px;
-    margin-left: 47 px;
+    text-align: center;
     position: absolute;
     font-size: 17px;
     font-weight: 600;
@@ -397,8 +442,9 @@ input[type=text]{
 
 .manga-info{
     width: 930px;
-    height: 270px;
-    background: #6366f1;
+    height: 370px;
+    background-color: #a55c1b;
+    background-image: linear-gradient(315deg, #a55c1b 0%, #000000 74%);
     position: absolute;
     margin-top: 533px;
     margin-left: 350px;
@@ -447,7 +493,6 @@ input[type=text]{
     width: 100%;
     height: 1500px;
     display: block;
-    background: white;
     margin-left: 360px;
     margin-top: 840px;
     border-radius: 20px;
